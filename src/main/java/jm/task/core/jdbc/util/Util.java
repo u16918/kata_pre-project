@@ -9,10 +9,8 @@ public class Util {
     private static final String USER = "root";
     private static final String PASSWORD = "U12345Ya*";
 
-    public Util() throws ClassNotFoundException {
+    public static Connection getConnect() throws SQLException, ClassNotFoundException {
         Class.forName ("com.mysql.cj.jdbc.Driver");
-    }
-    public Connection getConnect() throws SQLException {
         return DriverManager.getConnection(URL, USER, PASSWORD);
     }
 
