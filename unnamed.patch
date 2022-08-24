@@ -1,0 +1,110 @@
+Index: kata_pre-project/.idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/kata_pre-project/.idea/.gitignore b/kata_pre-project/.idea/.gitignore
+new file mode 100644
+--- /dev/null	(revision 05027af9d706173d4eec58f09d14a95a0f7ea050)
++++ b/kata_pre-project/.idea/.gitignore	(revision 05027af9d706173d4eec58f09d14a95a0f7ea050)
+@@ -0,0 +1,3 @@
++# Default ignored files
++/shelf/
++/workspace.xml
+Index: kata_pre-project/.idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/kata_pre-project/.idea/misc.xml b/kata_pre-project/.idea/misc.xml
+new file mode 100644
+--- /dev/null	(revision 05027af9d706173d4eec58f09d14a95a0f7ea050)
++++ b/kata_pre-project/.idea/misc.xml	(revision 05027af9d706173d4eec58f09d14a95a0f7ea050)
+@@ -0,0 +1,14 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ExternalStorageConfigurationManager" enabled="true" />
++  <component name="MavenProjectsManager">
++    <option name="originalFiles">
++      <list>
++        <option value="$PROJECT_DIR$/pom.xml" />
++      </list>
++    </option>
++  </component>
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_18" default="true" project-jdk-name="openjdk-18" project-jdk-type="JavaSDK">
++    <output url="file://$PROJECT_DIR$/out" />
++  </component>
++</project>
+\ No newline at end of file
+Index: kata_pre-project/.idea/modules.xml
+===================================================================
+diff --git a/kata_pre-project/.idea/modules.xml b/kata_pre-project/.idea/modules.xml
+new file mode 100644
+--- /dev/null	(revision 05027af9d706173d4eec58f09d14a95a0f7ea050)
++++ b/kata_pre-project/.idea/modules.xml	(revision 05027af9d706173d4eec58f09d14a95a0f7ea050)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectModuleManager">
++    <modules>
++      <module fileurl="file://$PROJECT_DIR$/kata_pre-project.iml" filepath="$PROJECT_DIR$/kata_pre-project.iml" />
++    </modules>
++  </component>
++</project>
+\ No newline at end of file
+Index: kata_pre-project/kata_pre-project.iml
+===================================================================
+diff --git a/kata_pre-project/kata_pre-project.iml b/kata_pre-project/kata_pre-project.iml
+new file mode 100644
+--- /dev/null	(revision 05027af9d706173d4eec58f09d14a95a0f7ea050)
++++ b/kata_pre-project/kata_pre-project.iml	(revision 05027af9d706173d4eec58f09d14a95a0f7ea050)
+@@ -0,0 +1,9 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="JAVA_MODULE" version="4">
++  <component name="NewModuleRootManager" inherit-compiler-output="true">
++    <exclude-output />
++    <content url="file://$MODULE_DIR$" />
++    <orderEntry type="jdk" jdkName="openjdk-18" jdkType="JavaSDK" />
++    <orderEntry type="sourceFolder" forTests="false" />
++  </component>
++</module>
+\ No newline at end of file
+Index: kata_pre-project/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/kata_pre-project/pom.xml b/kata_pre-project/pom.xml
+new file mode 100644
+--- /dev/null	(revision 05027af9d706173d4eec58f09d14a95a0f7ea050)
++++ b/kata_pre-project/pom.xml	(revision 05027af9d706173d4eec58f09d14a95a0f7ea050)
+@@ -0,0 +1,16 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project xmlns="http://maven.apache.org/POM/4.0.0"
++         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
++         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
++    <modelVersion>4.0.0</modelVersion>
++
++    <groupId>org.example</groupId>
++    <artifactId>kata_pre-project</artifactId>
++    <version>1.0-SNAPSHOT</version>
++
++    <properties>
++        <maven.compiler.source>18</maven.compiler.source>
++        <maven.compiler.target>18</maven.compiler.target>
++    </properties>
++
++</project>
+\ No newline at end of file
+Index: kata_pre-project/src/main/java/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/kata_pre-project/src/main/java/Main.java b/kata_pre-project/src/main/java/Main.java
+new file mode 100644
+--- /dev/null	(revision 05027af9d706173d4eec58f09d14a95a0f7ea050)
++++ b/kata_pre-project/src/main/java/Main.java	(revision 05027af9d706173d4eec58f09d14a95a0f7ea050)
+@@ -0,0 +1,2 @@
++public class Main {
++}
