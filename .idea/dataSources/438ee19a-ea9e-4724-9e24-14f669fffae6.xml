@@ -1064,7 +1064,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <user id="299" parent="1" name="user">
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <table id="300" parent="293" name="user">
+    <table id="300" parent="293" name="userdao">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
