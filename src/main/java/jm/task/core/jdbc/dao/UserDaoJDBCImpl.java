@@ -11,13 +11,8 @@ public class UserDaoJDBCImpl implements UserDao {
     public UserDaoJDBCImpl() {
 
     }
-    public Connection connectorDao() throws SQLException, ClassNotFoundException {
-        Util util = new Util();
-        return util.getConnect();
-    }
-
-    public void createUsersTable() throws ClassNotFoundException, SQLException {
-        String createTableSQL = "CREATE TABLE userDao"
+    public void createUsersTable() throws SQLException, ClassNotFoundException {
+        String sql = "CREATE TABLE userDao"
                 + "("
                 + "id INT(5) AUTO_INCREMENT, "
                 + "PRIMARY KEY (id), "
@@ -25,17 +20,14 @@ public class UserDaoJDBCImpl implements UserDao {
                 + "lastname VARCHAR(20) NOT NULL, "
                 + "AGE INT NOT NULL"
                 + ")";
-        try (Statement statement = connectorDao().createStatement()) {
-            statement.execute(createTableSQL);
-            System.out.println("Таблица в базе данных создана");
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
-
+        Statement statement = Util.getConnect().createStatement();
+        statement.execute(sql);
+        System.out.println("Таблица в базе данных создана");
+        statement.close();
     }
     public void dropUsersTable() {
         String sql = "DROP TABLE userDao";
-        try (Statement statement = connectorDao().createStatement()) {
+        try (Statement statement = Util.getConnect().createStatement()) {
             statement.executeUpdate(sql);
             System.out.println("Таблица удалена");
         } catch (SQLException | ClassNotFoundException e) {
@@ -43,16 +35,14 @@ public class UserDaoJDBCImpl implements UserDao {
         }
     }
 
-    public void saveUser(String name, String lastName, byte age) {
+    public void saveUser(String name, String lastName, byte age) throws SQLException, ClassNotFoundException {
         String sql = "INSERT INTO userDao (name, lastname, age) VALUES(?, ?, ?)";
-        try (PreparedStatement preparedStatement = connectorDao().prepareStatement(sql)) {
-            preparedStatement.setString(1, name);
-            preparedStatement.setString(2, lastName);
-            preparedStatement.setInt(3, age);
-            preparedStatement.executeUpdate();
-        } catch (SQLException | ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
+        PreparedStatement preparedStatement = Util.getConnect().prepareStatement(sql);
+        preparedStatement.setString(1, name);
+        preparedStatement.setString(2, lastName);
+        preparedStatement.setInt(3, age);
+        preparedStatement.executeUpdate();
+        preparedStatement.close();
         System.out.println("User с именем – " + name + " добавлен в базу данных");
     }
 
@@ -60,11 +50,11 @@ public class UserDaoJDBCImpl implements UserDao {
         PreparedStatement prepared = null;
         String sql = "DELETE FROM userDao WHERE id = ?";
         try {
-            prepared = connectorDao().prepareStatement(sql);
+            prepared = Util.getConnect().prepareStatement(sql);
             prepared.setLong(1, id);
             prepared.executeUpdate();
         } finally {
-            connectorDao().close();
+            Util.getConnect().close();
         }
         System.out.println("Запись " + id + " удалена");
     }
@@ -72,7 +62,7 @@ public class UserDaoJDBCImpl implements UserDao {
     public List<User> getAllUsers() {
         List<User> userDaoList = new ArrayList<>();
         String str = "select * from userDao";
-        try (Statement statement = connectorDao().createStatement()) {
+        try (Statement statement = Util.getConnect().createStatement()) {
             ResultSet resultSet = statement.executeQuery(str);
             while (resultSet.next()) {
                 User user = new User();
@@ -90,7 +80,7 @@ public class UserDaoJDBCImpl implements UserDao {
 
     public void cleanUsersTable() {
         String sql = "DELETE FROM userDao";
-        try (Statement statement = connectorDao().createStatement()){
+        try (Statement statement = Util.getConnect().createStatement()){
             statement.executeUpdate(sql);
         } catch (SQLException | ClassNotFoundException e) {
             System.out.println("Таблица пуста");
