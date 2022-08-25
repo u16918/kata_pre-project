@@ -1064,28 +1064,28 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <user id="299" parent="1" name="user">
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <table id="300" parent="293" name="userdao">
+    <table id="300" parent="293" name="user">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
     <column id="301" parent="300" name="id">
       <AutoIncrement>2</AutoIncrement>
-      <DataType>int|0s</DataType>
+      <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="302" parent="300" name="name">
-      <DataType>varchar(20)|0s</DataType>
+      <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="303" parent="300" name="lastname">
-      <DataType>varchar(20)|0s</DataType>
+    <column id="303" parent="300" name="lastName">
+      <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="304" parent="300" name="AGE">
-      <DataType>int|0s</DataType>
+    <column id="304" parent="300" name="age">
+      <DataType>tinyint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>

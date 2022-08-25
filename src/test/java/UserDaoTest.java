@@ -1,4 +1,5 @@
 import jm.task.core.jdbc.dao.UserDao;
+import jm.task.core.jdbc.dao.UserDaoHibernateImpl;
 import jm.task.core.jdbc.dao.UserDaoJDBCImpl;
 import jm.task.core.jdbc.model.User;
 import org.junit.Assert;
@@ -7,7 +8,7 @@ import org.junit.Test;
 import java.util.List;
 
 public class UserDaoTest {
-    private final UserDao userDao = new UserDaoJDBCImpl();
+    private final UserDao userDao = new UserDaoHibernateImpl();
 
     private final String testName = "Ivan";
     private final String testLastName = "Ivanov";
