@@ -12,8 +12,12 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
     UserDao userDao = new UserDaoJDBCImpl();
     @Override
-    public void createUsersTable() throws SQLException, ClassNotFoundException {
-        userDao.createUsersTable();
+    public void createUsersTable() {
+        try {
+            userDao.createUsersTable();
+        } catch (ClassNotFoundException | SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
@@ -22,13 +26,21 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void saveUser(String name, String lastName, byte age) throws SQLException, ClassNotFoundException {
-        userDao.saveUser(name, lastName, age);
+    public void saveUser(String name, String lastName, byte age) {
+        try {
+            userDao.saveUser(name, lastName, age);
+        } catch (SQLException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
-    public void removeUserById(long id) throws SQLException, ClassNotFoundException {
-        userDao.removeUserById(id);
+    public void removeUserById(long id) {
+        try {
+            userDao.removeUserById(id);
+        } catch (SQLException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override

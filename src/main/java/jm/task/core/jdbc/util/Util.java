@@ -9,9 +9,15 @@ public class Util {
     private static final String USER = "root";
     private static final String PASSWORD = "U12345Ya*";
 
-    public static Connection getConnect() throws SQLException, ClassNotFoundException {
-        Class.forName ("com.mysql.cj.jdbc.Driver");
-        return DriverManager.getConnection(URL, USER, PASSWORD);
+    public static Connection getConnect() {
+        Connection connect = null;
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            connect = DriverManager.getConnection(URL, USER, PASSWORD);
+        } catch (Exception e) {
+            System.out.println("Ошибка подключения");
+        }
+        return connect;
     }
 
 
