@@ -15,8 +15,8 @@ public class UserServiceImpl implements UserService {
     public void createUsersTable() {
         try {
             userDao.createUsersTable();
-        } catch (ClassNotFoundException | SQLException e) {
-            throw new RuntimeException(e);
+        } catch (Exception e) {
+            System.out.println("Ошибка создания таблицы");
         }
     }
 
@@ -27,20 +27,23 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void saveUser(String name, String lastName, byte age) {
+
         try {
             userDao.saveUser(name, lastName, age);
-        } catch (SQLException | ClassNotFoundException e) {
-            throw new RuntimeException(e);
+        } catch (Exception e) {
+            System.out.println("Ошибка сохранения");
         }
+
     }
 
     @Override
     public void removeUserById(long id) {
         try {
             userDao.removeUserById(id);
-        } catch (SQLException | ClassNotFoundException e) {
-            throw new RuntimeException(e);
+        } catch (Exception e) {
+            System.out.println("Ошибка удаление");
         }
+
     }
 
     @Override
