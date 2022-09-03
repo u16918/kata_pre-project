@@ -17,7 +17,6 @@
     </data-source>
     <data-source name="src:hibernate.cfg.xml/Hibernate" uuid="5f551a87-ab59-445c-8ed2-4b6f6090baec">
       <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" exact-version="0" />
-      <user-name>root</user-name>
       <schema-mapping />
     </data-source>
   </component>
